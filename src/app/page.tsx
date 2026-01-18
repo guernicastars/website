@@ -1,5 +1,5 @@
 import React from 'react';
-import { ArrowRight, BarChart3, Lock, Zap, Linkedin, Mail } from 'lucide-react';
+import { ArrowRight, BarChart3, Lock, Zap, Linkedin, Mail, GraduationCap } from 'lucide-react';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
@@ -10,34 +10,43 @@ export const metadata: Metadata = {
 export default function MaynardLanding() {
   
   // TEAM DATA
+  // Ensure your files in /public/images/ are named EXACTLY like this (case sensitive)
   const team = [
     { 
       name: "Tanay Saboo", 
       role: "Business & Strategy", 
-      bio: "IB Analyst. Economics & Mathematics.",
+      education: "LSE",
+      bio: "Investment Banking Analyst.",
       linkedin: "https://www.linkedin.com/in/tanaysaboo08/",
-      email: "tanay.saboo@maynardmetrics.com"
+      email: "tanay.saboo@maynardmetrics.com",
+      image: "/images/tanay.jpeg" 
     },
     { 
       name: "Eugene Shcherbinin", 
       role: "Quantitative Modeling", 
+      education: "LSE & UC Berkeley",
       bio: "Data Scientist & Quant Trader.",
       linkedin: "https://www.linkedin.com/in/eugene-shcherbinin/",
-      email: "eugene.shcherbinin@maynardmetrics.com"
+      email: "eugene.shcherbinin@maynardmetrics.com",
+      image: "/images/eugene.jpeg"
     },
     { 
       name: "Amar Guenther", 
       role: "Art Market & Ops", 
+      education: "Zeppelin University & UC Berkeley",
       bio: "Institutional Connectivity.",
       linkedin: "https://www.linkedin.com/in/amar-guenther-554795204/",
-      email: "amar.guenther@maynardmetrics.com"
+      email: "amar.guenther@maynardmetrics.com",
+      image: "/images/amar.jpeg"
     },
     { 
       name: "Max Kalpin", 
       role: "Data Infrastructure", 
+      education: "Johannes Kepler University Linz",
       bio: "Scalable Pipeline Architect.",
       linkedin: "https://www.linkedin.com/in/maxim-kalpin/",
-      email: "maxim.kalpin@maynardmetrics.com"
+      email: "maxim.kalpin@maynardmetrics.com",
+      image: "/images/max.jpeg"
     },
   ];
 
@@ -80,7 +89,6 @@ export default function MaynardLanding() {
               View the Research
               <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
             </button>
-            {/* UPDATED: WIRED UP BUTTON */}
             <a 
               href="mailto:info@maynardmetrics.com"
               className="inline-flex items-center justify-center gap-2 bg-white border border-neutral-200 text-neutral-900 px-8 py-4 rounded-full text-lg font-medium hover:bg-neutral-50 transition-all"
@@ -203,9 +211,12 @@ export default function MaynardLanding() {
             {team.map((member, i) => (
               <div key={i} className="bg-white p-8 rounded-2xl border border-neutral-200 hover:shadow-lg transition-all cursor-default group relative">
                 <div className="flex justify-between items-start mb-6">
-                  <div className="w-12 h-12 bg-neutral-900 text-white rounded-full flex items-center justify-center text-xl font-bold tracking-tight group-hover:scale-110 transition-transform">
-                    {member.name[0]}
-                  </div>
+                  {/* UPDATED: Removed onError handler to fix Server Component issue */}
+                  <img 
+                    src={member.image} 
+                    alt={member.name}
+                    className="w-16 h-16 rounded-full object-cover border border-neutral-200 group-hover:scale-105 transition-transform"
+                  />
                   <div className="flex gap-3">
                     <a 
                       href={`mailto:${member.email}`}
@@ -224,6 +235,10 @@ export default function MaynardLanding() {
                   </div>
                 </div>
                 <h4 className="text-lg font-bold tracking-tight mb-1">{member.name}</h4>
+                <div className="flex items-center gap-1 mb-2 text-neutral-500">
+                    <GraduationCap className="w-3 h-3" />
+                    <span className="text-xs font-medium">{member.education}</span>
+                </div>
                 <p className="text-xs font-bold uppercase tracking-wider text-neutral-400 mb-4">{member.role}</p>
                 <p className="text-neutral-600 text-sm leading-relaxed">{member.bio}</p>
               </div>
@@ -241,7 +256,6 @@ export default function MaynardLanding() {
           </div>
           <div className="flex gap-8 text-sm font-medium text-neutral-600 items-center">
             <a href="#" className="hover:text-neutral-900">Whitepaper</a>
-            {/* UPDATED: EXPLICIT EMAIL LINK */}
             <a href="mailto:info@maynardmetrics.com" className="hover:text-neutral-900">info@maynardmetrics.com</a>
             <span className="text-neutral-400">Seed Stage</span>
           </div>
