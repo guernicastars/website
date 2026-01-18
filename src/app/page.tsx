@@ -1,7 +1,46 @@
 import React from 'react';
-import { ArrowRight, BarChart3, Lock, Zap, TrendingUp, ChevronRight } from 'lucide-react';
+import { ArrowRight, BarChart3, Lock, Zap, Linkedin, Mail } from 'lucide-react';
+import type { Metadata } from 'next';
 
-export default function MaynardLanding() { // Renamed component for consistency
+export const metadata: Metadata = {
+  title: 'Maynard Metrics | Art Market Alpha',
+  description: 'Quantifying the Keynesian Beauty Contest.',
+};
+
+export default function MaynardLanding() {
+  
+  // TEAM DATA
+  const team = [
+    { 
+      name: "Tanay Saboo", 
+      role: "Business & Strategy", 
+      bio: "IB Analyst. Economics & Mathematics.",
+      linkedin: "https://www.linkedin.com/in/tanaysaboo08/",
+      email: "tanay.saboo@maynardmetrics.com"
+    },
+    { 
+      name: "Eugene Shcherbinin", 
+      role: "Quantitative Modeling", 
+      bio: "Data Scientist & Quant Trader.",
+      linkedin: "https://www.linkedin.com/in/eugene-shcherbinin/",
+      email: "eugene.shcherbinin@maynardmetrics.com"
+    },
+    { 
+      name: "Amar Guenther", 
+      role: "Art Market & Ops", 
+      bio: "Institutional Connectivity.",
+      linkedin: "https://www.linkedin.com/in/amar-guenther-554795204/",
+      email: "amar.guenther@maynardmetrics.com"
+    },
+    { 
+      name: "Max Kalpin", 
+      role: "Data Infrastructure", 
+      bio: "Scalable Pipeline Architect.",
+      linkedin: "https://www.linkedin.com/in/maxim-kalpin/",
+      email: "maxim.kalpin@maynardmetrics.com"
+    },
+  ];
+
   return (
     <div className="min-h-screen bg-neutral-50 text-neutral-900 font-sans selection:bg-neutral-900 selection:text-white">
       
@@ -9,7 +48,7 @@ export default function MaynardLanding() { // Renamed component for consistency
       <nav className="fixed w-full z-50 bg-neutral-50/80 backdrop-blur-md border-b border-neutral-200">
         <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
           <div className="flex items-center gap-2">
-            <span className="text-2xl font-serif font-bold tracking-tight">MAYNARD METRICS</span>
+            <span className="text-xl font-bold tracking-tight">MAYNARD METRICS</span>
           </div>
           <div className="hidden md:flex items-center gap-8 text-sm font-medium text-neutral-600">
             <a href="#thesis" className="hover:text-neutral-900 transition-colors">The Thesis</a>
@@ -29,7 +68,7 @@ export default function MaynardLanding() { // Renamed component for consistency
             <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
             Pilot Phase: Sotheby's Dataset
           </div>
-          <h1 className="text-5xl md:text-7xl font-serif font-medium leading-[1.1] mb-8">
+          <h1 className="text-5xl md:text-7xl font-medium tracking-tight leading-[1.1] mb-8">
             Pricing the <br/>
             <span className="text-neutral-400">Keynesian Beauty Contest.</span>
           </h1>
@@ -41,9 +80,13 @@ export default function MaynardLanding() { // Renamed component for consistency
               View the Research
               <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
             </button>
-            <button className="inline-flex items-center justify-center gap-2 bg-white border border-neutral-200 text-neutral-900 px-8 py-4 rounded-full text-lg font-medium hover:bg-neutral-50 transition-all">
+            {/* UPDATED: WIRED UP BUTTON */}
+            <a 
+              href="mailto:info@maynardmetrics.com"
+              className="inline-flex items-center justify-center gap-2 bg-white border border-neutral-200 text-neutral-900 px-8 py-4 rounded-full text-lg font-medium hover:bg-neutral-50 transition-all"
+            >
               Contact Investment Team
-            </button>
+            </a>
           </div>
         </div>
       </section>
@@ -58,7 +101,7 @@ export default function MaynardLanding() { // Renamed component for consistency
               <div className="w-12 h-12 bg-neutral-100 rounded-xl flex items-center justify-center mb-4">
                 <BarChart3 className="w-6 h-6 text-neutral-900" />
               </div>
-              <h3 className="text-xl font-serif font-bold">Subjectivity is an Asset Class</h3>
+              <h3 className="text-xl font-bold tracking-tight">Subjectivity is an Asset Class</h3>
               <p className="text-neutral-600 leading-relaxed">
                 We operationalize the St. Gallen "Auction Price Mechanism." We don't rely on taste; we model determinants like canonization, freshness, and momentum.
               </p>
@@ -69,7 +112,7 @@ export default function MaynardLanding() { // Renamed component for consistency
               <div className="w-12 h-12 bg-neutral-100 rounded-xl flex items-center justify-center mb-4">
                 <Zap className="w-6 h-6 text-neutral-900" />
               </div>
-              <h3 className="text-xl font-serif font-bold">Correcting Expert Bias</h3>
+              <h3 className="text-xl font-bold tracking-tight">Correcting Expert Bias</h3>
               <p className="text-neutral-600 leading-relaxed">
                 Our models identified a 15-20% conservative bias in expert estimates. By neutralizing this anchor, we reduce valuation error by 36%.
               </p>
@@ -80,7 +123,7 @@ export default function MaynardLanding() { // Renamed component for consistency
               <div className="w-12 h-12 bg-neutral-100 rounded-xl flex items-center justify-center mb-4">
                 <Lock className="w-6 h-6 text-neutral-900" />
               </div>
-              <h3 className="text-xl font-serif font-bold">Quantifying Upside Risk</h3>
+              <h3 className="text-xl font-bold tracking-tight">Quantifying Upside Risk</h3>
               <p className="text-neutral-600 leading-relaxed">
                 We replace single-point estimates with Bayesian Confidence Intervals, isolating "Safe Value" assets from "High Variance" opportunities.
               </p>
@@ -95,19 +138,19 @@ export default function MaynardLanding() { // Renamed component for consistency
         <div className="max-w-7xl mx-auto px-6">
           <div className="flex flex-col md:flex-row items-center gap-16">
             <div className="md:w-1/2 space-y-8">
-              <h2 className="text-4xl font-serif font-medium">We Don't Guess.<br/>We Calibrate.</h2>
+              <h2 className="text-4xl font-medium tracking-tight">We Don't Guess.<br/>We Calibrate.</h2>
               <div className="space-y-6">
                 <div className="flex items-start gap-4">
                   <div className="mt-1 w-6 h-6 rounded-full border border-green-500 flex items-center justify-center text-green-500 text-xs">1</div>
                   <div>
-                    <h4 className="font-bold text-lg">The Conservative Bias</h4>
+                    <h4 className="font-bold text-lg tracking-tight">The Conservative Bias</h4>
                     <p className="text-neutral-400">Auction houses systematically underestimate to drive momentum. We see through the noise.</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-4">
                   <div className="mt-1 w-6 h-6 rounded-full border border-green-500 flex items-center justify-center text-green-500 text-xs">2</div>
                   <div>
-                    <h4 className="font-bold text-lg">The 80% Confidence Interval</h4>
+                    <h4 className="font-bold text-lg tracking-tight">The 80% Confidence Interval</h4>
                     <p className="text-neutral-400">Our model brackets the true hammer price 78.5% of the time, providing a reliable risk metric.</p>
                   </div>
                 </div>
@@ -117,7 +160,6 @@ export default function MaynardLanding() { // Renamed component for consistency
             {/* ABSTRACT CHART VISUAL */}
             <div className="md:w-1/2 w-full">
               <div className="bg-neutral-800 rounded-2xl p-6 border border-neutral-700 shadow-2xl relative">
-                {/* Simulated Chart UI */}
                 <div className="flex items-center justify-between mb-8">
                   <div className="text-sm text-neutral-400">Price Prediction Model V1</div>
                   <div className="flex gap-2">
@@ -153,22 +195,35 @@ export default function MaynardLanding() { // Renamed component for consistency
       <section id="team" className="py-24 bg-neutral-50">
         <div className="max-w-7xl mx-auto px-6">
           <div className="mb-16">
-            <h2 className="text-4xl font-serif font-medium mb-4">The Team</h2>
+            <h2 className="text-4xl font-medium tracking-tight mb-4">The Team</h2>
             <p className="text-xl text-neutral-600">Tier-1 financial experience meets deep technical expertise.</p>
           </div>
           
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {[
-              { name: "Tanay", role: "Business & Strategy", bio: "IB Analyst. Economics & Mathematics." },
-              { name: "Eugene", role: "Quantitative Modeling", bio: "Data Scientist & Quant Trader." },
-              { name: "Amar", role: "Art Market & Ops", bio: "Institutional Connectivity." },
-              { name: "Max", role: "Data Infrastructure", bio: "Scalable Pipeline Architect." },
-            ].map((member, i) => (
-              <div key={i} className="bg-white p-8 rounded-2xl border border-neutral-200 hover:shadow-lg transition-all cursor-default group">
-                <div className="w-12 h-12 bg-neutral-900 text-white rounded-full flex items-center justify-center text-xl font-serif font-bold mb-6 group-hover:scale-110 transition-transform">
-                  {member.name[0]}
+            {team.map((member, i) => (
+              <div key={i} className="bg-white p-8 rounded-2xl border border-neutral-200 hover:shadow-lg transition-all cursor-default group relative">
+                <div className="flex justify-between items-start mb-6">
+                  <div className="w-12 h-12 bg-neutral-900 text-white rounded-full flex items-center justify-center text-xl font-bold tracking-tight group-hover:scale-110 transition-transform">
+                    {member.name[0]}
+                  </div>
+                  <div className="flex gap-3">
+                    <a 
+                      href={`mailto:${member.email}`}
+                      className="text-neutral-400 hover:text-neutral-900 transition-colors"
+                    >
+                      <Mail className="w-5 h-5" />
+                    </a>
+                    <a 
+                      href={member.linkedin}
+                      target="_blank"
+                      rel="noopener noreferrer" 
+                      className="text-neutral-400 hover:text-[#0A66C2] transition-colors"
+                    >
+                      <Linkedin className="w-5 h-5" />
+                    </a>
+                  </div>
                 </div>
-                <h4 className="text-lg font-bold mb-1">{member.name}</h4>
+                <h4 className="text-lg font-bold tracking-tight mb-1">{member.name}</h4>
                 <p className="text-xs font-bold uppercase tracking-wider text-neutral-400 mb-4">{member.role}</p>
                 <p className="text-neutral-600 text-sm leading-relaxed">{member.bio}</p>
               </div>
@@ -181,13 +236,13 @@ export default function MaynardLanding() { // Renamed component for consistency
       <footer className="bg-white py-12 border-t border-neutral-200">
         <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6">
           <div className="text-center md:text-left">
-            {/* UPDATED FOOTER BRANDING */}
-            <span className="text-lg font-serif font-bold tracking-tight block">MAYNARD METRICS</span>
+            <span className="text-lg font-bold tracking-tight block">MAYNARD METRICS</span>
             <span className="text-sm text-neutral-500">© 2026 London | San Francisco</span>
           </div>
-          <div className="flex gap-8 text-sm font-medium text-neutral-600">
+          <div className="flex gap-8 text-sm font-medium text-neutral-600 items-center">
             <a href="#" className="hover:text-neutral-900">Whitepaper</a>
-            <a href="#" className="hover:text-neutral-900">Contact</a>
+            {/* UPDATED: EXPLICIT EMAIL LINK */}
+            <a href="mailto:info@maynardmetrics.com" className="hover:text-neutral-900">info@maynardmetrics.com</a>
             <span className="text-neutral-400">Seed Stage</span>
           </div>
         </div>
