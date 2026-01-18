@@ -1,7 +1,7 @@
 import React from 'react';
 import { ArrowRight, BarChart3, Lock, Zap, TrendingUp, ChevronRight } from 'lucide-react';
 
-export default function MediciLanding() {
+export default function MaynardLanding() { // Renamed component for consistency
   return (
     <div className="min-h-screen bg-neutral-50 text-neutral-900 font-sans selection:bg-neutral-900 selection:text-white">
       
@@ -9,7 +9,7 @@ export default function MediciLanding() {
       <nav className="fixed w-full z-50 bg-neutral-50/80 backdrop-blur-md border-b border-neutral-200">
         <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
           <div className="flex items-center gap-2">
-            <span className="text-2xl font-serif font-bold tracking-tight">THE MEDICI PROJECT</span>
+            <span className="text-2xl font-serif font-bold tracking-tight">MAYNARD METRICS</span>
           </div>
           <div className="hidden md:flex items-center gap-8 text-sm font-medium text-neutral-600">
             <a href="#thesis" className="hover:text-neutral-900 transition-colors">The Thesis</a>
@@ -30,8 +30,8 @@ export default function MediciLanding() {
             Pilot Phase: Sotheby's Dataset
           </div>
           <h1 className="text-5xl md:text-7xl font-serif font-medium leading-[1.1] mb-8">
-            The art market is inefficient. <br/>
-            <span className="text-neutral-400">We are the correction.</span>
+            Pricing the <br/>
+            <span className="text-neutral-400">Keynesian Beauty Contest.</span>
           </h1>
           <p className="text-xl text-neutral-600 max-w-2xl leading-relaxed mb-10">
             Leveraging institutional-grade quantitative models and the St. Gallen "Auction Price Mechanism" to extract alpha from the $65B art market.
@@ -90,7 +90,7 @@ export default function MediciLanding() {
         </div>
       </section>
 
-      {/* DATA VISUALIZATION SECTION (Placeholder for your Chart) */}
+      {/* DATA VISUALIZATION SECTION */}
       <section id="findings" className="py-24 bg-neutral-900 text-white overflow-hidden">
         <div className="max-w-7xl mx-auto px-6">
           <div className="flex flex-col md:flex-row items-center gap-16">
@@ -181,7 +181,8 @@ export default function MediciLanding() {
       <footer className="bg-white py-12 border-t border-neutral-200">
         <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6">
           <div className="text-center md:text-left">
-            <span className="text-lg font-serif font-bold tracking-tight block">THE MEDICI PROJECT</span>
+            {/* UPDATED FOOTER BRANDING */}
+            <span className="text-lg font-serif font-bold tracking-tight block">MAYNARD METRICS</span>
             <span className="text-sm text-neutral-500">© 2026 London | San Francisco</span>
           </div>
           <div className="flex gap-8 text-sm font-medium text-neutral-600">
