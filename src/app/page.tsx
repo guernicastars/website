@@ -46,7 +46,7 @@ export default function MaynardLanding() {
       bio: "Scalable Pipeline Architect.",
       linkedin: "https://www.linkedin.com/in/maxim-kalpin/",
       email: "maxim.kalpin@maynardmetrics.com",
-      image: "/images/max.jpeg"
+      image: "/images/maxim.jpeg"
     },
   ];
 
