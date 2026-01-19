@@ -140,58 +140,62 @@ export default function MaynardLanding() {
           </div>
         </div>
       </section>
-
-      {/* DATA VISUALIZATION SECTION */}
-      <section id="findings" className="py-24 bg-neutral-900 text-white overflow-hidden">
+{/* DATA VISUALIZATION SECTION */}
+<section id="findings" className="py-24 bg-neutral-900 text-white overflow-hidden">
         <div className="max-w-7xl mx-auto px-6">
           <div className="flex flex-col md:flex-row items-center gap-16">
             <div className="md:w-1/2 space-y-8">
-              <h2 className="text-4xl font-medium tracking-tight">We Don't Guess.<br/>We Calibrate.</h2>
-              <div className="space-y-6">
+              <h2 className="text-4xl font-medium tracking-tight">The "Bidding Magnet" <br/> <span className="text-red-500">Trap.</span></h2>
+              <p className="text-xl text-neutral-400">
+                Experts intentionally suppress estimates to induce bidding wars. This "sales tactic" creates artificially tight spreads that fail to account for real financial risk.
+              </p>
+              
+              <div className="space-y-6 mt-8">
+                {/* METRIC 1 */}
                 <div className="flex items-start gap-4">
-                  <div className="mt-1 w-6 h-6 rounded-full border border-green-500 flex items-center justify-center text-green-500 text-xs">1</div>
+                  <div className="mt-1 min-w-[24px] h-6 rounded-full border border-red-500 flex items-center justify-center text-red-500 text-xs">A</div>
                   <div>
-                    <h4 className="font-bold text-lg tracking-tight">The Conservative Bias</h4>
-                    <p className="text-neutral-400">Auction houses systematically underestimate to drive momentum. We see through the noise.</p>
+                    <h4 className="font-bold text-lg tracking-tight text-red-400">Artificial Tightness</h4>
+                    <p className="text-neutral-400 text-sm leading-relaxed">
+                      By anchoring estimates low (median spread $2,000), experts signal false safety. This works for marketing, but fails for valuation—missing the true price 60% of the time.
+                    </p>
                   </div>
                 </div>
+
+                {/* METRIC 2 */}
                 <div className="flex items-start gap-4">
-                  <div className="mt-1 w-6 h-6 rounded-full border border-green-500 flex items-center justify-center text-green-500 text-xs">2</div>
+                  <div className="mt-1 min-w-[24px] h-6 rounded-full border border-green-500 flex items-center justify-center text-green-500 text-xs">B</div>
                   <div>
-                    <h4 className="font-bold text-lg tracking-tight">The 80% Confidence Interval</h4>
-                    <p className="text-neutral-400">Our model brackets the true hammer price 78.5% of the time, providing a reliable risk metric.</p>
+                    <h4 className="font-bold text-lg tracking-tight text-green-400">Honest Volatility</h4>
+                    <p className="text-neutral-400 text-sm leading-relaxed">
+                      Our model refuses to lie about risk. We widen the bracket (median spread $4,000) to honestly capture the "Breakout Potential" of the asset, achieving 79.9% reliability.
+                    </p>
                   </div>
                 </div>
               </div>
+
+              {/* Tagline */}
+              <div className="pt-4 border-t border-neutral-800">
+                <p className="font-mono text-sm text-neutral-500 uppercase tracking-widest">
+                  Sales Tactics vs. Financial Reality
+                </p>
+              </div>
             </div>
             
-            {/* ABSTRACT CHART VISUAL */}
+            {/* REAL CHART FROM RESEARCH */}
             <div className="md:w-1/2 w-full">
-              <div className="bg-neutral-800 rounded-2xl p-6 border border-neutral-700 shadow-2xl relative">
-                <div className="flex items-center justify-between mb-8">
-                  <div className="text-sm text-neutral-400">Price Prediction Model V1</div>
-                  <div className="flex gap-2">
-                    <div className="w-3 h-3 rounded-full bg-red-500"></div>
-                    <div className="w-3 h-3 rounded-full bg-yellow-500"></div>
-                    <div className="w-3 h-3 rounded-full bg-green-500"></div>
-                  </div>
-                </div>
-                <div className="h-64 flex items-end justify-between gap-2">
-                  {[40, 65, 45, 80, 55, 90, 70, 85, 60, 95].map((h, i) => (
-                    <div key={i} className="w-full bg-neutral-700 rounded-t-sm relative group">
-                      <div 
-                        style={{ height: `${h}%` }} 
-                        className="absolute bottom-0 w-full bg-green-500/80 group-hover:bg-green-400 transition-all duration-500"
-                      ></div>
-                       {/* Bias Line */}
-                      <div style={{ height: `${h - 20}%` }} className="absolute bottom-0 w-full border-t-2 border-red-400/50"></div>
-                    </div>
-                  ))}
-                </div>
-                <div className="mt-4 flex justify-between text-xs text-neutral-500 font-mono">
-                  <span>NOV 2025</span>
-                  <span>DEC 2025</span>
-                  <span>JAN 2026</span>
+              <div className="bg-neutral-800 rounded-2xl p-4 border border-neutral-700 shadow-2xl relative overflow-hidden group">
+                <div className="absolute inset-0 bg-gradient-to-t from-neutral-900/50 to-transparent pointer-events-none"></div>
+                {/* Ensure the image reflects the 'Efficiency Test' violin plot or the Absolute Spread plot */}
+                <img 
+                  src="/images/efficiency_chart_dark.png"  // <--- MATCH THIS FILENAME
+                  alt="Model Efficiency vs Experts" 
+                  className="w-full h-auto rounded-lg opacity-90 group-hover:opacity-100 transition-opacity"
+                />
+                
+                <div className="absolute bottom-6 left-6 inline-flex items-center gap-2 px-3 py-1 rounded-full bg-black/50 backdrop-blur-md border border-white/10 text-[10px] font-mono uppercase tracking-wider text-green-400">
+                  <span className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse"></span>
+                  Risk Analysis: 32,334 Lots
                 </div>
               </div>
             </div>
